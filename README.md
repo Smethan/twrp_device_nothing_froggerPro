@@ -9,7 +9,7 @@ Recovery tree for the Nothing Phone (4a) Pro, codenamed `froggerPro`.
 Device                  | Nothing Phone (4a)
 :-----------------------|:-------------------------------------------
 SoC                     | Qualcomm Snapdragon® 7 Gen 4 (SM7750-AB)
-Board                   | `I DONT KNOW YET`
+Board                   | sun
 CPU                     | Octa-core (1x2.8 GHz Cortex-720 & 4x2.4 GHz Cortex-720 & 3x1.8 GHz Cortex-520)
 GPU                     | Adreno 722
 Memory                  | 8/12 GB RAM
