@@ -48,7 +48,7 @@ Manifest        | https://github.com/nebrassy/platform_manifest_twrp_aosp.git
     - [x] Touchscreen
     - [ ] MTP
     - [x] Filesystem/Mounts
-    - [ ] Slot switch
+    - [x] Slot switch
     - [ ] Haptics
 - [ ] Settings persistence
 - [ ] Data decryption
