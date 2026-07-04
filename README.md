@@ -34,7 +34,6 @@ Manifest        | https://github.com/nebrassy/platform_manifest_twrp_aosp.git
 ## Checklist
 
 ### Functionality
-### Everything else isnt tested because of no touch factor
 
 - [x] Installing and flashing images
     - [x] .zip files (experimental)
@@ -44,15 +43,14 @@ Manifest        | https://github.com/nebrassy/platform_manifest_twrp_aosp.git
 - [x] Built-in features work normally
     - [x] ADB
         - [x] Sideload
-    - [x] FastbootD
+    - [ ] FastbootD
     - [x] Screen and brightnesss
-    - [ ] Touchscreen
-    - [ ] Unmount
+    - [x] Touchscreen
     - [ ] MTP
-    - [ ] Filesystem/Mounts
+    - [x] Filesystem/Mounts
     - [ ] Slot switch
     - [ ] Haptics
 - [ ] Settings persistence
-- [x] Data decryption
-    - [x] Without a password
+- [ ] Data decryption
+    - [ ] Without a password
     - [ ] With a password
