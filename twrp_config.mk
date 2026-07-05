@@ -27,6 +27,9 @@ TW_EXTRA_LANGUAGES      := true
 TW_EXCLUDE_APEX         := true
 TW_INCLUDE_FASTBOOTD    := true
 
+TW_LOAD_VENDOR_MODULES := "haptic.ko hapticdrv.ko"
+TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
+
 # Change clock position so camera wont close up the clock
 TW_CUSTOM_CLOCK_POS := "590"
 
@@ -80,10 +83,10 @@ TW_FRAMERATE := 144
 TW_HAS_EDL_MODE := true
 
 # Encryption
-TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-TW_INCLUDE_OMAPI := true
+#TW_INCLUDE_CRYPTO := true
+#TW_INCLUDE_CRYPTO_FBE := true
+#TW_INCLUDE_FBE_METADATA_DECRYPT := true
+#TW_INCLUDE_OMAPI := true
 
 # Debug
 TARGET_USES_LOGD := true
