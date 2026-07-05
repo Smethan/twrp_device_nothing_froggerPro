@@ -4,3 +4,4 @@ service vendor.gatekeeper-qti /vendor/bin/hw/android.hardware.gatekeeper-service
     setenv LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/bin
     seclabel u:r:recovery:s0
     disabled
+

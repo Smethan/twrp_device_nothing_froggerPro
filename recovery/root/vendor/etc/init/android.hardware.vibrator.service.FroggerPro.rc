@@ -16,3 +16,4 @@ service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.Frogger
     seclabel u:r:recovery:s0
     interface aidl android.hardware.vibrator.IVibrator/default
     disabled
+
