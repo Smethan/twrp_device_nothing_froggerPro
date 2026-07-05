@@ -54,3 +54,11 @@ Manifest        | https://github.com/nebrassy/platform_manifest_twrp_aosp.git
 - [ ] Data decryption
     - [ ] Without a password
     - [ ] With a password
+
+
+### COMPILE BUILD
+
+
+In order to compile:
+
+`lunch twrp_froggerPro-ap2a-eng && m recoveryimage`
