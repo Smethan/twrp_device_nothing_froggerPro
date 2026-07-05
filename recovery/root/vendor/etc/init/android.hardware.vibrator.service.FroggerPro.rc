@@ -1,11 +1,10 @@
-# Copyright (C) 2025 The Android Open Source Project
-# Copyright (C) 2026 Ubuntuify
-# SPDX-License-Identifier: Apache-2.0
-
-on boot
+on fs
     wait /dev/aac_richtap
     chown system system /dev/aac_richtap
     chmod 0600 /dev/aac_richtap
+
+on post-fs-data 
+    wait /vendor/odm/etc/aac_richtap.config
     start vendor.vibrator
 
 service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.FroggerPro
@@ -17,4 +16,3 @@ service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.Frogger
     seclabel u:r:recovery:s0
     interface aidl android.hardware.vibrator.IVibrator/default
     disabled
-
