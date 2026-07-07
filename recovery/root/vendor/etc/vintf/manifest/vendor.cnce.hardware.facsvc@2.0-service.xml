@@ -1,0 +1,10 @@
+<!--
+    Input:
+        vendor/noth/factorytool/facsvc/vendor.cnce.hardware.facsvc@2.0-service.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>vendor.cnce.hardware.facsvc2</name>
+        <fqname>IFacSvc/default</fqname>
+    </hal>
+</manifest>

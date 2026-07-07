@@ -12,9 +12,6 @@ TW_THEME := portrait_hdpi
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_INPUT_DEVICES := false
 TW_INPUT_BLACKLIST := "null"
-
-TW_MAX_BRIGHTNESS := 5000
-
 TW_DEFAULT_LANGUAGE     := en
 TW_USE_TOOLBOX          := true
 TW_INCLUDE_NTFS_3G      := true
@@ -35,13 +32,13 @@ TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/default"
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 
-# Change clock position so camera wont close up the clock
+# Screen
+TW_MAX_BRIGHTNESS := 5000
 TW_CUSTOM_CLOCK_POS := "590"
+TW_FRAMERATE := 144
 
-# CPU Temperature
+# CPU Temperature & Battery
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone10/temp
-
-# Battery
 TW_CUSTOM_BATTERY_PATH := "/sys/class/power_supply/battery"
 HEALTHD_USE_BATTERY_INFO := true
 
@@ -81,13 +78,11 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 
-# Custom refresh rate
-TW_FRAMERATE := 144
-
 # Include EDL mode
 TW_HAS_EDL_MODE := true
 
 # Encryption
+#TW_KEYMASTER_VERSION := 4.1 # Force Keymaster version
 #TW_INCLUDE_CRYPTO := true
 #TW_INCLUDE_CRYPTO_FBE := true
 #TW_INCLUDE_FBE_METADATA_DECRYPT := true

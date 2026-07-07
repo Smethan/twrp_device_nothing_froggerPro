@@ -50,3 +50,5 @@ on fs
 
 on boot
     setprop sys.usb.config adb
+
+import /init.recovery.qcom_decrypt.rc

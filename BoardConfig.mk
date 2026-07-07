@@ -10,10 +10,6 @@ DEVICE_PATH := device/nothing/froggerPro
 # Define the root of your recovery resources clearly
 TARGET_RECOVERY_ROOT_OUT := $(DEVICE_PATH)/recovery/root
 
-# Force API levels to match TWRP source (API 34)
-BOARD_SHIPPING_API_LEVEL := 34
-BOARD_SYSTEMSDK_VERSIONS := 34
-
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -49,15 +45,10 @@ TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := kryo300
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno810
 
-# DTBO/DTB
-BOARD_PREBUILT_DTBIMAGE := $(DEVICE_PATH)/prebuilt/dtb.img
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := sun
 TARGET_NO_BOOTLOADER := true
 
 # Kernel/Ramdisk
@@ -97,6 +88,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_SYSTEMSDK_VERSIONS :=
 # Platform
 TARGET_BOARD_PLATFORM := sun
+TARGET_BOOTLOADER_BOARD_NAME := sun
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
@@ -104,8 +96,8 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-# Despite being VA/B device, there is a dedicated recovery partition
-BOARD_USES_RECOVERY_AS_BOOT := 
+# There is recovery partition for that device
+BOARD_USES_RECOVERY_AS_BOOT :=
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT :=
 
 # GSI && GKI
@@ -116,11 +108,6 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 # Use LZ4 Ramdisk compression instead of GZIP
 BOARD_RAMDISK_USE_LZ4 := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
-
-
-# Security patch level
-VENDOR_SECURITY_PATCH := 2021-08-01
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
@@ -137,15 +124,13 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 # disable hashtree/verification
 
 # Encryption
-BOARD_USES_METADATA_PARTITION := true
-BOARD_USES_QCOM_FBE_DECRYPTION := true
 PLATFORM_VERSION := 99.87.36
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 PLATFORM_SECURITY_PATCH := 2099-12-31
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
+# Manifest
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/recovery/root/vendor/etc/vintf/manifest.xml
-# TARGET_USES_64_BIT_BINDER := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31

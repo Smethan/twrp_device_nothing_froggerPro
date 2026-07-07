@@ -1,0 +1,11 @@
+<!--
+    Input:
+        vendor/noth/hardware/biometrics/face/android.hardware.biometrics.face-service.noth.xml
+-->
+<manifest version="8.0" type="device">
+    <hal format="aidl">
+        <name>android.hardware.biometrics.face</name>
+        <version>4</version>
+        <fqname>IFace/default</fqname>
+    </hal>
+</manifest>
