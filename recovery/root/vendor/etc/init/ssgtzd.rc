@@ -18,5 +18,6 @@ service vendor.ssgtzd /vendor/bin/ssgtzd
     group system oem_2912 wakelock
     capabilities WAKE_ALARM BLOCK_SUSPEND
     disabled
+    seclabel u:r:recovery:s0
     socket ssgtzd stream 0660 system oem_2912
     socket ssgtzd_opener stream 0660 system system
