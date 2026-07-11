@@ -27,10 +27,15 @@ TW_INCLUDE_FASTBOOTD    := true
 TW_LOAD_VENDOR_MODULES := "haptic.ko hapticdrv.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 
-# Haptics
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
-TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/default"
-TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
+# Haptics: intentionally disabled in recovery. With the AIDL haptics path enabled, every touch
+# calls AServiceManager_getService() for the vibrator HAL on the GUI thread; that HAL never runs
+# in recovery, so the call blocks ~5s (retrying) before returning NULL -> severe input lag /
+# frozen redraw. Disabling this makes vibrate() take the non-blocking sysfs fallback (no-op here).
+# Working haptics isn't feasible in recovery anyway: the real LRA (AAC rt6010) needs its HAL to
+# load waveform RAM + calibrate f0, and that HAL can't even link (needs libpalclient.so / audio PAL).
+#TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+#TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/default"
+#TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 
 # Screen
 TW_MAX_BRIGHTNESS := 5000
